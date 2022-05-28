@@ -6,12 +6,12 @@ function Register(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleChange(e) {
-    if (e.target.name === 'email'){
-      setEmail(e.target.value);
-    } else {
-      setPassword(e.target.value);
-    }
+  function handleChangeEmail(e) {
+    setEmail(e.target.value);
+  };
+
+  function handleChangePassword(e) {
+    setPassword(e.target.value);
   };
 
   function handleSubmit(e) {
@@ -32,7 +32,7 @@ function Register(props) {
           name="email"
           placeholder="Email"
           value={email || ''}
-          onChange={handleChange} />
+          onChange={handleChangeEmail} />
         <span id="name-error" className="popup__error" />
         <input
           required
@@ -44,7 +44,7 @@ function Register(props) {
           name="password"
           placeholder="Пароль"
           value={password || ''}
-          onChange={handleChange} />
+          onChange={handleChangePassword} />
         <span id="job-error" className="popup__error" />
       </Form>
       <p className="page__text">Уже зарегистрированы? <Link to="/sign-in" className="header__link" style={{color: "#FFFFFF", textDecoration: "none"}}>Войти</Link></p>

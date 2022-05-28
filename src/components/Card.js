@@ -31,7 +31,7 @@ export default function Card(props) {
         <h2 className="card__name">{props.card.name}</h2>
         <div className="card__like-container">
           <button type="button" className={`card__like-btn button ${cardLikeButtonClassName}`} onClick={handleLikeClick}/>
-          {props.card.likes.length > 0 && <span className="card__like-counter">{props.card.likes.length}</span>}
+          <span className="card__like-counter">{props.card.likes.length}</span>
         </div>
       </div>
     </article>

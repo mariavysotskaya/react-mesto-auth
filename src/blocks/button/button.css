@@ -3,6 +3,7 @@
   cursor: pointer;
   font-family: 'Inter', Arial, sans-serif;
   transition: opacity linear;
+  border: none;
 }
 
 .button:hover {

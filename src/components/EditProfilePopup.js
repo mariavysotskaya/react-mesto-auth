@@ -13,13 +13,13 @@ export default function EditProfilePopup(props) {
     setDescription(currentUser.about);
   }, [currentUser, props.isOpen]);
 
-  function handleProfileInfo(e) {
-    if (e.target.name === 'name'){
-      setName(e.target.value);
-    } else {
-      setDescription(e.target.value);
-    }
-  };  
+  function handleProfileName(e) {
+    setName(e.target.value);
+  };
+
+  function handleProfileDescription(e) {
+    setDescription(e.target.value);
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -41,7 +41,7 @@ export default function EditProfilePopup(props) {
         name="name"
         placeholder="Введите имя"
         value={name || ''}
-        onChange={handleProfileInfo} />
+        onChange={handleProfileName} />
       <span id="name-error" className="popup__error" />
       <input
         required
@@ -53,7 +53,7 @@ export default function EditProfilePopup(props) {
         name="about"
         placeholder="Введите род занятий"
         value={description || ''}
-        onChange={handleProfileInfo} />
+        onChange={handleProfileDescription} />
       <span id="job-error" className="popup__error" />
     </PopupWithForm>
   )

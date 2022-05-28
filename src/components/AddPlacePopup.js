@@ -11,12 +11,12 @@ export default function AddPlacePopup(props) {
     setLink('');
   }, [props.isOpen]);
 
-  function handlePlaceData(e) {
-    if (e.target.name === 'image-name') {
-      setName(e.target.value);
-    } else {
-      setLink(e.target.value);
-    }
+  function handlePlaceName(e) {
+    setName(e.target.value);
+  };
+
+  function handlePlaceLink(e) {
+    setLink(e.target.value);
   };
 
   function handleSubmit(e) {
@@ -39,7 +39,7 @@ export default function AddPlacePopup(props) {
         name="image-name"
         placeholder="Название"
         value={name || ''}
-        onChange={handlePlaceData} />
+        onChange={handlePlaceName} />
       <span id="image-name-error" className="popup__error" />
       <input
         required
@@ -49,7 +49,7 @@ export default function AddPlacePopup(props) {
         name="image-link"
         placeholder="Ссылка на картинку"
         value={link || ''}
-        onChange={handlePlaceData} />
+        onChange={handlePlaceLink} />
       <span id="image-link-error" className="popup__error" />
     </PopupWithForm>
   )
